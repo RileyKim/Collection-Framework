@@ -195,6 +195,60 @@ public class HashsetExample{
 }
 ```
 
+```
+//예시
+//hashcode()와 equals() 메소드 재정의
+
+public class Member{
+	public String name;
+	public int age;
+	
+	public Member(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+
+	@Override
+	public boolean equals(Object obj){
+		if(obj instanceof Member){
+			Member member = (Member) obj;
+			return member.name.equals(name)&&(mamber.age == age);
+		}else{
+			return false;
+		}
+	}
+	
+	@Override
+	public int hashCode(){
+		return name.hashCode()+age;
+	}
+}
+
+```
+
+
+##Map Collection
+
+Map Collection은 키와 값으로 구성된 Entry 객체를 저장하는 구조를 가지고 있다. 키와 값은 모두 객체이며 키는 중복 저장될 수 없지만 값은 중복 저장될 수 있다. 
+
+Map Collection에는 HashMap, HashTable, LinkedHashmap, Properties, TreeMap 등이 있다. 
+
+
+**객체 추가**
+
+- V put(K key, V value)
+
+**객체 검색**
+
+- boolean containsKey(Object key)
+- boolean constainsValue(Object value)
+- V get(Object key)
+
+**객체 삭제**
+
+- V remove(Object key)
+- void clear()
+
 
 
 
